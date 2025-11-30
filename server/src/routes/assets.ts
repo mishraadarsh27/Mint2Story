@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import prisma from '../db';
 import { authenticateToken } from '../middleware/auth';
 import { registerAsset } from '../utils/story';
@@ -6,7 +6,7 @@ import { registerAsset } from '../utils/story';
 const router = express.Router();
 
 // Create Asset
-router.post('/', authenticateToken, async (req: any, res) => {
+router.post('/', authenticateToken, async (req: any, res: Response) => {
     const { title, description, category, price, image_url, metadata } = req.body;
 
     try {
