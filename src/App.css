@@ -1,0 +1,5 @@
+/* Global app wrapper tweaks: let Tailwind layouts control spacing
+   instead of the default Vite demo constraints. */
+#root {
+  min-height: 100vh;
+}
